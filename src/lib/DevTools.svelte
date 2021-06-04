@@ -14,7 +14,7 @@
   }))
 </script>
 
-<p class="text-3xl">hey</p>
+<p class="text-2xl">hey</p>
 <div style="--json-tree-font-size: 1rem">
   <JSONTree value={uiState} />
 </div>
