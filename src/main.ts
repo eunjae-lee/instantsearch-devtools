@@ -7,7 +7,7 @@ import {
   pagination,
 } from "instantsearch.js/es/widgets";
 
-import { debug } from "./lib";
+import { createDevTools } from "./lib";
 
 const searchClient = algoliasearch(
   "latency",
@@ -45,6 +45,10 @@ search.addWidgets([
 
 search.start();
 
+const devTools = createDevTools({
+  container: "#devtools",
+  instantSearchInstance: search,
+});
 document.querySelector(".btn-open-devtools").addEventListener("click", () => {
-  debug({ container: "#devtools", instantSearchInstance: search });
+  devTools.toggle();
 });
